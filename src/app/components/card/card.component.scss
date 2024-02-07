@@ -1,0 +1,25 @@
+.card {
+  box-sizing: border-box;
+  width: 100%;
+  padding: 20px;
+  border-radius: 10px;
+  border: 1px solid #080f3a;
+
+  &__title {
+    margin: 0;
+    font-weight: 600;
+    font-size: 20px;
+    color: #080f3a;
+  }
+
+  &__category, &__price, &__description {
+    margin: 10px 0;
+    font-weight: 400;
+    font-size: 16px;
+
+    span {
+      font-style: italic;
+      color: #080f3a;
+    }
+  }
+}

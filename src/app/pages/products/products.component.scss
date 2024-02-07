@@ -1,0 +1,29 @@
+.container {
+  max-width: 700px;
+  width: 100%;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 50px;
+}
+
+.logout {
+  display: flex;
+  justify-content: flex-end;
+
+  &__button {
+    padding: 15px 20px;
+    border-radius: 10px;
+    color: white;
+    background: #080f3a;
+    border: none;
+    cursor: pointer;
+  }
+}
+
+.cards {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+

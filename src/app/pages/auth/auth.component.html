@@ -1,0 +1,24 @@
+<div class="section-form">
+  <div class="container">
+    <h1 class="section-form__title">Вход</h1>
+    <form action="" class="form" [formGroup]="form">
+      <div class="form__item">
+        <input class="form__input" formControlName="login" placeholder="Логин">
+        <span class="form__error"
+              *ngIf="form.controls['login'].invalid && form.controls['login'].touched">*Не указан логин</span>
+      </div>
+      <div class="form__item">
+        <input class="form__input" formControlName="password" placeholder="Пароль">
+        <span class="form__error"
+              *ngIf="form.controls['password'].invalid && form.controls['password'].touched">*Не указан пароль</span>
+      </div>
+      <button class="form__button"
+              type="submit"
+              [ngClass]="form.invalid ? 'form__disabled' : ''"
+              [disabled]="form.invalid"
+              (click)="onSubmit()">
+        Войти
+      </button>
+    </form>
+  </div>
+</div>

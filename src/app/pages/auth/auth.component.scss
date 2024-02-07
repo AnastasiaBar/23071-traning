@@ -1,0 +1,56 @@
+.section-form{
+  max-width: 700px;
+  width: 100%;
+  margin: 0 auto;
+
+  &__title{
+    text-align: center;
+  }
+}
+
+.form{
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+
+  &__item{
+    position: relative;
+    width: 100%;
+  }
+
+  &__input{
+    box-sizing: border-box;
+    width: 100%;
+    padding: 15px 20px;
+    border-radius: 10px;
+    border: 1px solid #080f3a;
+
+    &:focus, &:active{
+      outline: none;
+      border: 1px solid #3043a8;
+    }
+  }
+
+  &__error{
+    position: absolute;
+    left: 0;
+    top: 100%;
+    margin: 2px 0;
+    font-size: 12px;
+    color: #dd0707;
+  }
+
+  &__button{
+    padding: 15px 20px;
+    border-radius: 10px;
+    color: white;
+    background: #080f3a;
+    border: none;
+    cursor: pointer;
+  }
+
+  &__disabled{
+    opacity: 0.8;
+    cursor: auto;
+  }
+}

@@ -1,0 +1,14 @@
+<div class="container">
+
+  <div class="logout">
+    <button class="logout__button" (click)="logout()">Выйти</button>
+  </div>
+
+  <div class="cards" *ngFor="let item of ObjectList(productsList)">
+
+    <app-card [product] = item></app-card>
+
+  </div>
+</div>
+
+
