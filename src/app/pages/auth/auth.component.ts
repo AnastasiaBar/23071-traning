@@ -1,8 +1,8 @@
-import {ChangeDetectionStrategy, Component, OnDestroy, OnInit} from '@angular/core';
-import {FormControl, FormGroup, Validators} from "@angular/forms";
-import {AuthService} from "../../services/auth.service";
-import {Router} from "@angular/router";
-import {Subscription} from 'rxjs';
+import { ChangeDetectionStrategy, Component, OnDestroy, OnInit } from '@angular/core';
+import { FormControl, FormGroup, Validators } from '@angular/forms';
+import { AuthService } from '../../services/auth.service';
+import { Router } from '@angular/router';
+import { Subscription } from 'rxjs';
 
 @Component({
   selector: 'app-auth',
@@ -12,9 +12,9 @@ import {Subscription} from 'rxjs';
 })
 export class AuthComponent implements OnInit, OnDestroy {
   public form = new FormGroup({
-    "login": new FormControl(),
-    "password": new FormControl()
-  })
+    'login': new FormControl(), // тут кавычки ваще не нужные и инит формы есть ниже
+    'password': new FormControl() // тут кавычки ваще не нужные и инит формы есть ниже
+  });
   private observable: Subscription | undefined;
 
   constructor(private auth: AuthService,
@@ -25,19 +25,19 @@ export class AuthComponent implements OnInit, OnDestroy {
     this.form = new FormGroup({
       login: new FormControl(null, [Validators.required]),
       password: new FormControl(null, [Validators.required])
-    })
+    });
   }
 
   public onSubmit() {
-    this.observable = this.auth.login().subscribe((data: object) => {
-        this.router.navigate(['/products'])
+    this.auth.login().subscribe((_data: object) => { // а если понадобится сделать еще одну подписку?
+        this.router.navigate(['/products']);
       },
-      error => console.log(error))
+      error => console.log(error));
   }
 
   public ngOnDestroy() {
     if (this.observable) {
-      this.observable.unsubscribe()
+      this.observable.unsubscribe();
     }
   }
 }

@@ -1,7 +1,7 @@
 import {ChangeDetectionStrategy, Component, Input} from '@angular/core';
 
-interface Product {
-  name: string,
+interface Product {   // iProduct желательно
+  name: string,  // ;
   price: number,
   category: string,
   description: string

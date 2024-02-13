@@ -1,8 +1,8 @@
-import {ChangeDetectionStrategy, ChangeDetectorRef, Component, OnChanges, OnDestroy, OnInit} from '@angular/core';
+import {ChangeDetectionStrategy, ChangeDetectorRef, Component, OnDestroy, OnInit} from '@angular/core';
 import {AuthService} from "../../services/auth.service";
 import {Router} from "@angular/router";
 import {ApiService} from "../../services/api.service";
-import {Subscription} from "rxjs";
+import { Observable, Subscription } from 'rxjs';
 
 @Component({
   selector: 'app-products',
@@ -13,6 +13,7 @@ import {Subscription} from "rxjs";
 export class ProductsComponent  implements OnInit, OnDestroy{
 
   public productsList: Object = [];
+  public productsList$: Observable<Object> | undefined;
   private observable: Subscription | undefined;
   protected readonly ObjectList = Object;
 
@@ -23,7 +24,7 @@ export class ProductsComponent  implements OnInit, OnDestroy{
   }
 
   public ngOnInit (){
-
+    this.productsList$ = this.api.getProducts(); // можно избавится от лишнего кода и cdr
     this.observable = this.api.getProducts().subscribe((data: Object) => {
       this.productsList = data;
       this.cdr.markForCheck();

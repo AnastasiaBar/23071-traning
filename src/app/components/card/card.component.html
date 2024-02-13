@@ -2,6 +2,6 @@
   <h2 class="card__title">{{ product?.name | uppercase }}</h2>
   <h3 class="card__price" appColorDirective><span>Цена: </span>{{product?.price | currency: 'RUB ' :'code'}}</h3>
   <h3 class="card__price" appColorDirective><span>Цена: </span>{{ NumberPrice(product?.price) | reverseCurrency: 'RUB' }}</h3>
-  <h3 class="card__category"><span>Категория: </span>{{product?.category}}</h3>
-  <h3 class="card__description"><span>Описание: </span>{{product?.description}}</h3>
+  <h3 class="card__category"><span>Категория: </span>{{product?.category}}</h3>    <!-- если ставишь вопросик, лучше добавлять альтернативное значение типа || '-'-->
+  <h3 class="card__description"><span>Описание: </span>{{product?.description}}</h3>    <!-- если ставишь вопросик, лучше добавлять альтернативное значение типа || '-'-->
 </div>

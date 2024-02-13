@@ -9,6 +9,12 @@
     <app-card [product] = item></app-card>
 
   </div>
+<!--  пачиму нет?-->
+  <div class="cards" *ngFor="let item of ObjectList(productsList$ | async)">
+
+    <app-card [product] = item></app-card>
+
+  </div>
 </div>
 
 
